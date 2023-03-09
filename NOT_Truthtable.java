@@ -30,7 +30,7 @@ public class NOT_Truthtable {
     }
 
     @Test
-    public void invalidInput() {
+    public void invalidIndex() {
         boolean output = false;
         try {
             notGate.setInput(startValue, 1);
