@@ -1,7 +1,7 @@
 public class NOT_Gate extends Gate {
 
     public NOT_Gate() {
-        super.setInputSize(1);
+        super(1);
     }
 
     @Override
