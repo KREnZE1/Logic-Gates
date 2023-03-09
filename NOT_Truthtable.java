@@ -1,8 +1,6 @@
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import java.util.concurrent.ExecutionException;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,7 +30,7 @@ public class NOT_Truthtable {
     }
 
     @Test
-    public void tooManyInputs() {
+    public void invalidInput() {
         boolean output = false;
         try {
             notGate.setInput(startValue, 1);
@@ -53,3 +51,4 @@ public class NOT_Truthtable {
         assertTrue(output);
     }
 }
+//TODO: Create tests for interconnected nets of logic gates
