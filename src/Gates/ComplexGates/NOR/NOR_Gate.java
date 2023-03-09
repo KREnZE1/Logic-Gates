@@ -10,22 +10,16 @@ public class NOR_Gate extends ComplexGate{
     private NOT_Gate not;
 
     public NOR_Gate() {
-        super(2);
+        super(2, new NOT_Gate());
+        not = (NOT_Gate) finalGate;
         or = new OR_Gate();
-        not = new NOT_Gate();
-    }
-
-    @Override
-    public boolean findOutput() {
-        connect();
-        return not.calcOutput();
     }
 
     @Override
     public void connect() {
         or.setInput(inputs[0], 0);
         or.setInput(inputs[1], 1);
-        
+
         not.setInput(or, 0);
     }
 

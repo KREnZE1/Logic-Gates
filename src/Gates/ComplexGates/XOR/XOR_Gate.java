@@ -12,17 +12,11 @@ public class XOR_Gate extends ComplexGate{
     private OR_Gate or;
 
     public XOR_Gate() {
-        super(2);
-        both = new AND_Gate();
-        and = new AND_Gate();
+        super(2, new AND_Gate());
+        and = (AND_Gate) finalGate;
         not = new NOT_Gate();
+        both = new AND_Gate();
         or = new OR_Gate();
-    }
-
-    @Override
-    public boolean findOutput() {
-        connect();
-        return and.calcOutput();
     }
 
     @Override
