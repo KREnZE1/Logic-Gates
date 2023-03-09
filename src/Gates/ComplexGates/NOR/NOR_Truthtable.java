@@ -1,4 +1,5 @@
-package src.AND;
+package src.Gates.ComplexGates.NOR;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -7,14 +8,14 @@ import org.junit.Test;
 
 import src.Output;
 
-public class AND_Truthtable {
+public class NOR_Truthtable {
 
-    AND_Gate andGate;
+    NOR_Gate norGate = new NOR_Gate();
     Output o1, o2;
 
     @Before
     public void setup() {
-        andGate = new AND_Gate();
+        norGate = new NOR_Gate();
         o1 = new Output();
         o2 = new Output();
     }
@@ -23,43 +24,43 @@ public class AND_Truthtable {
     public void inFalseFalse() {
         o1.setOutput(false);
         o2.setOutput(false);
-        andGate.setInput(o1, 0);
-        andGate.setInput(o2, 1);
-        assertFalse(andGate.calcOutput());
+        norGate.setInput(o1, 0);
+        norGate.setInput(o2, 1);
+        assertTrue(norGate.calcOutput());
     }
 
     @Test
     public void inFalseTrue() {
         o1.setOutput(false);
         o2.setOutput(true);
-        andGate.setInput(o1, 0);
-        andGate.setInput(o2, 1);
-        assertFalse(andGate.calcOutput());
+        norGate.setInput(o1, 0);
+        norGate.setInput(o2, 1);
+        assertFalse(norGate.calcOutput());
     }
 
     @Test
     public void inTrueFalse() {
         o1.setOutput(true);
         o2.setOutput(false);
-        andGate.setInput(o1, 0);
-        andGate.setInput(o2, 1);
-        assertFalse(andGate.calcOutput());
+        norGate.setInput(o1, 0);
+        norGate.setInput(o2, 1);
+        assertFalse(norGate.calcOutput());
     }
 
     @Test
     public void inTrueTrue() {
         o1.setOutput(true);
         o2.setOutput(true);
-        andGate.setInput(o1, 0);
-        andGate.setInput(o2, 1);
-        assertTrue(andGate.calcOutput());
+        norGate.setInput(o1, 0);
+        norGate.setInput(o2, 1);
+        assertFalse(norGate.calcOutput());
     }
 
     @Test
     public void invalidIndex() {
         boolean output = false;
         try {
-            andGate.setInput(o1, 2);
+            norGate.setInput(o1, 2);
         } catch(IllegalArgumentException iae) {
             output = true;
         }
@@ -69,9 +70,9 @@ public class AND_Truthtable {
     @Test
     public void inputOneNotSet() {
         boolean output = false;
-        andGate.setInput(o2, 1);
+        norGate.setInput(o2, 1);
         try {
-            andGate.calcOutput();
+            norGate.calcOutput();
         } catch(NullPointerException npe) {
             output = true;
         }
@@ -81,9 +82,9 @@ public class AND_Truthtable {
     @Test
     public void inputTwoNotSet() {
         boolean output = false;
-        andGate.setInput(o1, 0);
+        norGate.setInput(o1, 0);
         try {
-            andGate.calcOutput();
+            norGate.calcOutput();
         } catch(NullPointerException npe) {
             output = true;
         }
@@ -94,7 +95,7 @@ public class AND_Truthtable {
     public void neitherInputSet() {
         boolean output = false;
         try {
-            andGate.calcOutput();
+            norGate.calcOutput();
         } catch(NullPointerException npe) {
             output = true;
         }

@@ -1,6 +1,6 @@
-package src.OR;
+package src.Gates.SimpleGates.OR;
 
-import src.Gate;
+import src.Gates.Gate;
 
 public class OR_Gate extends Gate{
 

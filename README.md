@@ -1,4 +1,4 @@
-# Logic-Gates
+# Logic Gates
 
 This project seeks to emulate the inner workings of a computer by creating the logic gates used to computewithin the machine.
 

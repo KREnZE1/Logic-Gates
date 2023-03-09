@@ -1,4 +1,5 @@
-package src.NOR;
+package src.Gates.SimpleGates.OR;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -7,14 +8,14 @@ import org.junit.Test;
 
 import src.Output;
 
-public class NOR_Truthtable {
+public class OR_Truthtable {
 
-    NOR_Gate norGate = new NOR_Gate();
+    OR_Gate orGate;
     Output o1, o2;
 
     @Before
     public void setup() {
-        norGate = new NOR_Gate();
+        orGate = new OR_Gate();
         o1 = new Output();
         o2 = new Output();
     }
@@ -23,43 +24,43 @@ public class NOR_Truthtable {
     public void inFalseFalse() {
         o1.setOutput(false);
         o2.setOutput(false);
-        norGate.setInput(o1, 0);
-        norGate.setInput(o2, 1);
-        assertTrue(norGate.calcOutput());
+        orGate.setInput(o1, 0);
+        orGate.setInput(o2, 1);
+        assertFalse(orGate.calcOutput());
     }
 
     @Test
     public void inFalseTrue() {
         o1.setOutput(false);
         o2.setOutput(true);
-        norGate.setInput(o1, 0);
-        norGate.setInput(o2, 1);
-        assertFalse(norGate.calcOutput());
+        orGate.setInput(o1, 0);
+        orGate.setInput(o2, 1);
+        assertTrue(orGate.calcOutput());
     }
 
     @Test
     public void inTrueFalse() {
         o1.setOutput(true);
         o2.setOutput(false);
-        norGate.setInput(o1, 0);
-        norGate.setInput(o2, 1);
-        assertFalse(norGate.calcOutput());
+        orGate.setInput(o1, 0);
+        orGate.setInput(o2, 1);
+        assertTrue(orGate.calcOutput());
     }
 
     @Test
     public void inTrueTrue() {
         o1.setOutput(true);
         o2.setOutput(true);
-        norGate.setInput(o1, 0);
-        norGate.setInput(o2, 1);
-        assertFalse(norGate.calcOutput());
+        orGate.setInput(o1, 0);
+        orGate.setInput(o2, 1);
+        assertTrue(orGate.calcOutput());
     }
 
     @Test
     public void invalidIndex() {
         boolean output = false;
         try {
-            norGate.setInput(o1, 2);
+            orGate.setInput(o1, 2);
         } catch(IllegalArgumentException iae) {
             output = true;
         }
@@ -69,9 +70,9 @@ public class NOR_Truthtable {
     @Test
     public void inputOneNotSet() {
         boolean output = false;
-        norGate.setInput(o2, 1);
+        orGate.setInput(o2, 1);
         try {
-            norGate.calcOutput();
+            orGate.calcOutput();
         } catch(NullPointerException npe) {
             output = true;
         }
@@ -81,9 +82,9 @@ public class NOR_Truthtable {
     @Test
     public void inputTwoNotSet() {
         boolean output = false;
-        norGate.setInput(o1, 0);
+        orGate.setInput(o1, 0);
         try {
-            norGate.calcOutput();
+            orGate.calcOutput();
         } catch(NullPointerException npe) {
             output = true;
         }
@@ -94,10 +95,11 @@ public class NOR_Truthtable {
     public void neitherInputSet() {
         boolean output = false;
         try {
-            norGate.calcOutput();
+            orGate.calcOutput();
         } catch(NullPointerException npe) {
             output = true;
         }
         assertTrue(output);
     }
 }
+//TODO: Create tests for interconnected nets of logic gates

@@ -1,6 +1,6 @@
-package src.AND;
+package src.Gates.SimpleGates.AND;
 
-import src.Gate;
+import src.Gates.Gate;
 
 public class AND_Gate extends Gate{
 
