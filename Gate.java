@@ -1,6 +1,10 @@
 public abstract class Gate extends LogicUnit{
     protected LogicUnit[] inputs;
 
+    public Gate(int inputSize) {
+        setInputSize(inputSize);
+    }
+
     public void setInput(LogicUnit u, int index) {
         if (index < 0 || index >= this.inputs.length) throw new IllegalArgumentException("Index " + index + " invalid");
         this.inputs[index] = u;

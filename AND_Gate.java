@@ -1,7 +1,7 @@
 public class AND_Gate extends Gate{
 
     public AND_Gate() {
-        super.setInputSize(2);
+        super(2);
     }
 
     @Override
