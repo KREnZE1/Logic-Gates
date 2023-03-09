@@ -1,3 +1,7 @@
+package src.AND;
+
+import src.Gate;
+
 public class AND_Gate extends Gate{
 
     public AND_Gate() {

@@ -1,3 +1,9 @@
+package src.NOR;
+
+import src.Gate;
+import src.NOT.NOT_Gate;
+import src.OR.OR_Gate;
+
 public class NOR_Gate extends Gate{
 
     private OR_Gate or;

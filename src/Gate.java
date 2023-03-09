@@ -1,3 +1,4 @@
+package src;
 public abstract class Gate extends LogicUnit{
     protected LogicUnit[] inputs;
 
