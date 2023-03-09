@@ -102,4 +102,3 @@ public class OR_Truthtable {
         assertTrue(output);
     }
 }
-//TODO: Create tests for interconnected nets of logic gates

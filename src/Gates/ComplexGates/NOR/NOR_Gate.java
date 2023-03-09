@@ -25,6 +25,7 @@ public class NOR_Gate extends ComplexGate{
     public void connect() {
         or.setInput(inputs[0], 0);
         or.setInput(inputs[1], 1);
+        
         not.setInput(or, 0);
     }
 

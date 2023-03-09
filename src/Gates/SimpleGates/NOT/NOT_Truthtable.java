@@ -55,4 +55,3 @@ public class NOT_Truthtable {
         assertTrue(output);
     }
 }
-//TODO: Create tests for interconnected nets of logic gates
