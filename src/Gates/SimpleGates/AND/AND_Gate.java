@@ -12,7 +12,7 @@ public class AND_Gate extends Gate{
     }
 
     /*
-     * @return: whether both inputs are true
+     * @return: boolean: whether both inputs are true
      * An AND-Gate returns true only if both of its inputs are also true
      */
     @Override
