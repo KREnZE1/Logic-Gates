@@ -1,8 +1,13 @@
 package src;
+
 public class Output extends LogicUnit {
 
     private boolean output;
 
+    /*
+     * An Output consistently sends the same type of signal
+     * It has no inputs
+     */
     public Output() {
         this.setOutput(false);
     }

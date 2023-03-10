@@ -4,13 +4,19 @@ import src.Gates.Gate;
 
 public class AND_Gate extends Gate{
 
+    /*
+     * AND-Gates typically take two inputs and return a single value
+     */
     public AND_Gate() {
         super(2);
     }
 
+    /*
+     * @return: whether both inputs are true
+     * An AND-Gate returns true only if both of its inputs are also true
+     */
     @Override
     public boolean findOutput() {
-        if (this.inputs[0] == null || this.inputs[1] == null) throw new NullPointerException("Input not yet assigned");
         return (this.inputs[0].calcOutput() && this.inputs[1].calcOutput());
     }
 
