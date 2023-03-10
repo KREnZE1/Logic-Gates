@@ -5,7 +5,7 @@ import src.Gates.Gate;
 public class AND_Gate extends Gate{
 
     /*
-     * AND-Gates typically take two inputs and return a single value
+     * AND-Gates combine two input values into a single output value
      */
     public AND_Gate() {
         super(2);

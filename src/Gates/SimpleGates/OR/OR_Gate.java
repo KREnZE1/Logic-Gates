@@ -5,7 +5,7 @@ import src.Gates.Gate;
 public class OR_Gate extends Gate{
 
     /*
-     * OR-Gates typically take two inputs and return a single value
+     * OR-Gates combine two input values into a single output value
      */
     public OR_Gate() {
         super(2);

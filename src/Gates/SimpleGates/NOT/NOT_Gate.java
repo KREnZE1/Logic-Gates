@@ -5,7 +5,7 @@ import src.Gates.Gate;
 public class NOT_Gate extends Gate {
 
     /*
-     * NOT-Gates typically take one input and return a single value
+     * NOT-Gates take one input value and return one output value
      */
     public NOT_Gate() {
         super(1);

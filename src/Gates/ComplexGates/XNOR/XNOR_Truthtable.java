@@ -9,10 +9,14 @@ import org.junit.Test;
 import src.Output;
 
 public class XNOR_Truthtable {
-    XNOR_Gate xnorGate;
-    Output o1, o2;
 
-    @Before
+    XNOR_Gate xnorGate; //The tested Gate
+    Output o1, o2; //The necessary inputs to test the gates functionality
+
+    /*
+     * Initialises all needed values to a clean state
+     */
+    @Before //Runs right before any test is executed
     public void setup() {
         xnorGate = new XNOR_Gate();
         o1 = new Output();
@@ -25,6 +29,7 @@ public class XNOR_Truthtable {
         o2.setOutput(false);
         xnorGate.setInput(o1, 0);
         xnorGate.setInput(o2, 1);
+        //Two false values create a true value when fed into the logical NAND-Gate
         assertTrue(xnorGate.calcOutput());
     }
 
@@ -34,6 +39,7 @@ public class XNOR_Truthtable {
         o2.setOutput(true);
         xnorGate.setInput(o1, 0);
         xnorGate.setInput(o2, 1);
+        //A false and a true value create a false value when fed into the logical NAND-Gate
         assertFalse(xnorGate.calcOutput());
     }
 
@@ -43,6 +49,7 @@ public class XNOR_Truthtable {
         o2.setOutput(false);
         xnorGate.setInput(o1, 0);
         xnorGate.setInput(o2, 1);
+        //A true and a false value create a false value when fed into the logical NAND-Gate
         assertFalse(xnorGate.calcOutput());
     }
 
@@ -52,6 +59,7 @@ public class XNOR_Truthtable {
         o2.setOutput(true);
         xnorGate.setInput(o1, 0);
         xnorGate.setInput(o2, 1);
+        //Two true values create a true value when fed into the logical NAND-Gate
         assertTrue(xnorGate.calcOutput());
     }
 
@@ -59,9 +67,9 @@ public class XNOR_Truthtable {
     public void invalidIndex() {
         boolean output = false;
         try {
-            xnorGate.setInput(o1, 2);
+            xnorGate.setInput(o1, 2); //A wrong index should lead to an Exception being thrown
         } catch(IllegalArgumentException iae) {
-            output = true;
+            output = true; //If that exception is thrown, the test is successfull
         }
         assertTrue(output);
     }
@@ -71,9 +79,9 @@ public class XNOR_Truthtable {
         boolean output = false;
         xnorGate.setInput(o2, 1);
         try {
-            xnorGate.calcOutput();
+            xnorGate.calcOutput(); //If an index was not set before the output is calculated an Exception should be thrown
         } catch(NullPointerException npe) {
-            output = true;
+            output = true; //If that exception is thrown, the test is successfull
         }
         assertTrue(output);
     }
@@ -83,9 +91,9 @@ public class XNOR_Truthtable {
         boolean output = false;
         xnorGate.setInput(o1, 0);
         try {
-            xnorGate.calcOutput();
+            xnorGate.calcOutput(); //If an index was not set before the output is calculated an Exception should be thrown
         } catch(NullPointerException npe) {
-            output = true;
+            output = true; //If that exception is thrown, the test is successfull
         }
         assertTrue(output);
     }
@@ -94,9 +102,9 @@ public class XNOR_Truthtable {
     public void neitherInputSet() {
         boolean output = false;
         try {
-            xnorGate.calcOutput();
+            xnorGate.calcOutput(); //If an index was not set before the output is calculated an Exception should be thrown
         } catch(NullPointerException npe) {
-            output = true;
+            output = true; //If that exception is thrown, the test is successfull
         }
         assertTrue(output);
     }
